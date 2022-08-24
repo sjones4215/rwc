@@ -1,27 +1,16 @@
-import {AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
 import React from 'react';
 import './App.scss';
+import HomePage from "./view/HomeScreen";
+import {ThemeProvider} from "@mui/material";
+import {theme} from "./styles/CustomTheme";
 
-function App() {
+const App = () => {
   return (
-      <Box sx={{ flexGrow: 1 }}>
-          <AppBar position="static">
-              <Toolbar>
-                  <IconButton
-                      size="large"
-                      edge="start"
-                      color="inherit"
-                      aria-label="menu"
-                      sx={{ mr: 2 }}
-                  >
-                  </IconButton>
-                  <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                      News
-                  </Typography>
-                  <Button color="inherit">Login</Button>
-              </Toolbar>
-          </AppBar>
-      </Box>
+    <div>
+        <ThemeProvider theme={theme}>
+            <HomePage />
+        </ThemeProvider>
+    </div>
   );
 }
 
